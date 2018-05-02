@@ -1,5 +1,5 @@
 # PetCheck
-Keep track of your pet's feeding/walking schedules and vaccination appointments.
+Keep track of your pet's feeding/walking schedules, vaccination appointments, and other important information.
 
 ## Usage
 - clone
