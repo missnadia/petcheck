@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>PetCheck</title>
+  </head>
+  <body>
+    <nav>
+    <% if logged_in? %>
+      <a href="/pets/new"> Add New Pet </a><br>
+    <% else %>
+      <a href="/signup"> Sign Up </a>
+      <a href="/login"> Log In </a>
+    <%end %>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
