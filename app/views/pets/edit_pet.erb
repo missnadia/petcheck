@@ -1,0 +1,19 @@
+<% if logged_in? %>
+  <% @pets.each do |pet| %>
+    <form method="post" action="/pets/<%= @pet.id %>">
+      <input id="hidden" type="hidden" name="_method" value="patch">
+      <input type="text" name="pet[name]" id="pet.name"><br>
+      <input type="text" name="pet[gender]" id="pet.gender"><br>
+      <input type="date" name="pet[birthday]" id="pet.birthday"><br>
+      <input type="checkbox" name="pet[fed]" id="pet.fed"><br>
+      <input type="checkbox" name="pet[walk]" id="pet.walk"><br>
+      <input type="checkbox" name="pet[dog_friendly]" id="pet.dog_friendly"><br>
+      <input type="text" name="pet[vet]" id="pet.vet"><br>
+      <input type="text" name="pet[add_notes]" id="pet.add_notes"><br>
+      <input type="submit" value="Submit Edits">
+    </form>
+  <% end %>
+  <h4><a href="/logout">Log Out</a></h4>
+<% else %>
+  <a href="/login">Log In</a>
+<% end %>

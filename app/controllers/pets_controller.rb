@@ -15,10 +15,10 @@ class PetsController < ApplicationController
 
   post '/pets' do
     if logged_in?
-      if params[:content] == ""
+      if params[:name] == ""
         redirect to "/pets/new"
       else
-        @pet = current_user.pets.create(content: params[:content])
+        @pet = current_user.pets.create(name: params[:name], gender: params[:gender] birthday: params[:birthday], fed: params[:fed], walk: params[:walk], dog_friendly: params[:dog_friendly], vet: params[:vet], add_notes: params[:add_notes])
         redirect to "/pets/#{@pet.id}" if @pet.save
       end
     else
@@ -46,11 +46,11 @@ class PetsController < ApplicationController
 
   patch '/pets/:id' do
     if logged_in?
-      if params[:content] == ""
+      if params[:name] == ""
         redirect "/pets/#{params[:id]}/edit"
       else
         @pet = pet.find_by_id(params[:id])
-        (@pet.user == current_user) ? (redirect to "/pets/#{@pet.id}" if @pet.update(content: params[:content])) : (redirect to '/pets')
+        (@pet.user == current_user) ? (redirect to "/pets/#{@pet.id}" if @pet.update(name: params[:name], gender: params[:gender], birthday: params[:birthday], fed: params[:fed], walk: params[:walk], dog_friendly: params[:dog_friendly], vet: params[:vet], add_notes: params[:add_notes])) : (redirect to '/pets')
       end
     else
       redirect to "/login"

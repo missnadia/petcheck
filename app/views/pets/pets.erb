@@ -1,0 +1,18 @@
+<% if logged_in? %>
+  <h3>Welcome, <%=current_user.username %></h3>
+  <% @pets.each do |pet| %>
+  <div>
+    <br><%= pet.name %></br>
+    <br><%= pet.birthday %></br>
+    <br><%= pet.fed %></br>
+    <br><%= pet.walk %></br>
+    <br><%= pet.dog_friendly %></br>
+    <br><%= pet.vet %></br>
+    <br><%= pet.add_notes %></br>
+  </div>
+  <% end %>
+
+  <h4><a href="/logout">Log Out</a></h4>
+<% else %>
+  <h4><a href="/login">Log In</a></h4>
+<% end %>

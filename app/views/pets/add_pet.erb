@@ -1,0 +1,31 @@
+<h1>Add New Pet</h1>
+
+<form action="/pets" method="POST">
+  <label>Name:</label>
+  <input type="text" name="pet[name]" id="pet.name"><br>
+  <br>
+  <label>Gender:</label><br>
+  <input type="radio" name="pet[gender]" value="male" checked> Male<br>
+  <input type="radio" name="pet[gender]" value="female"> Female<br>
+  <br>
+  <label>Birthday:</label>
+  <input type="date" name="pet[birthday]" id="pet.birthday"><br>
+  <br>
+  <label>Fed?</label>
+  <input type="checkbox" name="pet[fed]" id="pet.fed"><br>
+  <br>
+  <label>Walked?</label>
+  <input type="checkbox" name="pet[walk]" id="pet.walk"><br>
+  <br>
+  <label>Dog Friendly?</label>
+  <input type="checkbox" name="pet[dog_friendly]" id="pet.dog_friendly"><br>
+  <br>
+  <label>Vet Information:</label><br>
+  <input type="text" name="pet[vet]" id="pet.vet"><br>
+  <br>
+  <label>Additional Notes (allergies, medications, favorite treat/toy, etc.):</label><br>
+  <input type="text" name="pet[add_notes]" id="pet.add_notes"><br>
+  <br>
+  <input type="submit" value="Add Pet">
+</form>
+<h4><a href="/logout">Log Out</a></h4>

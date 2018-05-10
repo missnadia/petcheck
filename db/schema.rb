@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2018_05_08_025008) do
 
   create_table "pets", force: :cascade do |t|
     t.string "name"
+    t.string "gender"
     t.date "birthday"
     t.boolean "fed"
     t.boolean "walk"
