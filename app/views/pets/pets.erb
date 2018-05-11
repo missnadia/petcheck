@@ -2,7 +2,7 @@
   <h3>Welcome, <%=current_user.username %></h3>
   <% @pets.each do |pet| %>
   <div>
-    <br><%= pet.name %></br>
+    <br><a href="/pets/<%= pet.id %>"><%= pet.name %></a></br>
   </div>
   <% end %>
   <br><a href="/pets/new"> Add New Pet </a></br>
