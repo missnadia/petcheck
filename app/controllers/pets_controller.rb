@@ -18,8 +18,8 @@ class PetsController < ApplicationController
       if params[:name] == ""
         redirect to "/pets/new"
       else
-        @pet = current_user.pets.create(name: params[:name], gender: params[:gender] birthday: params[:birthday], fed: params[:fed], walk: params[:walk], dog_friendly: params[:dog_friendly], vet: params[:vet], add_notes: params[:add_notes])
-        redirect to "/pets/#{@pet.id}" if @pet.save
+        @pet = current_user.pets.build(name: params[:name], gender: params[:gender] birthday: params[:birthday], fed: params[:fed].inspect, walk: params[:walk].inspect, dog_friendly: params[:dog_friendly].inspect, vet: params[:vet], add_notes: params[:add_notes])
+        @pet.save ? (redirect to "/pets/#{@pet.id}") : redirect to "/pets/new"
       end
     else
       redirect to '/login'
@@ -50,7 +50,7 @@ class PetsController < ApplicationController
         redirect "/pets/#{params[:id]}/edit"
       else
         @pet = pet.find_by_id(params[:id])
-        (@pet.user == current_user) ? (redirect to "/pets/#{@pet.id}" if @pet.update(name: params[:name], gender: params[:gender], birthday: params[:birthday], fed: params[:fed], walk: params[:walk], dog_friendly: params[:dog_friendly], vet: params[:vet], add_notes: params[:add_notes])) : (redirect to '/pets')
+        (@pet.user == current_user) ? (redirect to "/pets/#{@pet.id}" if @pet.update(name: params[:name], gender: params[:gender], birthday: params[:birthday], fed: params[:fed].inspect, walk: params[:walk].inspect, dog_friendly: params[:dog_friendly].insoect, vet: params[:vet], add_notes: params[:add_notes])) : (redirect to '/pets')
       end
     else
       redirect to "/login"
