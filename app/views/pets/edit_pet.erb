@@ -2,15 +2,16 @@
   <% @pets.each do |pet| %>
     <form method="post" action="/pets/<%= @pet.id %>">
       <input id="hidden" type="hidden" name="_method" value="patch">
-      <input type="text" name="pet[name]" id="pet.name"><br>
-      <input type="text" name="pet[gender]" id="pet.gender"><br>
-      <input type="date" name="pet[birthday]" id="pet.birthday"><br>
-      <input type="checkbox" name="pet[fed]" id="pet.fed"><br>
-      <input type="checkbox" name="pet[walk]" id="pet.walk"><br>
-      <input type="checkbox" name="pet[dog_friendly]" id="pet.dog_friendly"><br>
-      <input type="text" name="pet[vet]" id="pet.vet"><br>
-      <input type="text" name="pet[add_notes]" id="pet.add_notes"><br>
-      <input type="submit" value="Submit Edits">
+      <input type="text" name="name" id="<%= @pet.name %>"><br>
+      <input type="radio" name="gender" value="male"> Male<br>
+      <input type="radio" name="gender" value="female"> Female<br>
+      <input type="date" name="birthday" id="<%= @pet.birthday %>"><br>
+      <input type="checkbox" name="fed" id="<%= @pet.fed %>"><br>
+      <input type="checkbox" name="walk" id="<%= @pet.walk %>"><br>
+      <input type="checkbox" name="dog_friendly" id="<%= @pet.dog_friendly %>"><br>
+      <input type="text" name="vet" id="<%= @pet.vet %>"><br>
+      <input type="text" name="add_notes" id="<%= @pet.add_notes %>"><br>
+      <input type="submit" value="Submit Changes">
     </form>
   <% end %>
   <h4><a href="/logout">Log Out</a></h4>
