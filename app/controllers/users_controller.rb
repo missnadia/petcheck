@@ -29,9 +29,12 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect to "/pets"
     else
-      flash[:notice] = "Invalid username/password. Please try again." if params[:email] || params[:password]
-      redirect to "/login"
+      redirect to "/error"
     end
+  end
+
+  get '/error' do
+   erb :"/users/error"
   end
 
   get '/logout' do
