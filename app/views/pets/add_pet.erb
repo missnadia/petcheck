@@ -1,31 +1,33 @@
-<h1>Add New Pet</h1>
+<h2>Add New Pet</h2>
 
 <form action="/pets" method="POST">
   <label>Name:</label>
-  <input type="text" name="pet[name]" id="pet.name"><br>
+  <input type="text" name="name" id="@pet.name"><br>
   <br>
   <label>Gender:</label><br>
-  <input type="radio" name="pet[gender]" value="male" checked> Male<br>
-  <input type="radio" name="pet[gender]" value="female"> Female<br>
+  <input type="radio" name="gender" value="Male"> Male<br>
+  <input type="radio" name="gender" value="Female"> Female<br>
   <br>
   <label>Birthday:</label>
-  <input type="date" name="pet[birthday]" id="pet.birthday"><br>
+  <input type="date" name="birthday" id="@pet.birthday"><br>
   <br>
-  <label>Fed?</label>
-  <input type="checkbox" name="pet[fed]" id="pet.fed"><br>
+  <label>Fed?</label><br>
+  <input type="radio" name="fed" value="Yes"> Yes<br>
+  <input type="radio" name="fed" value="No"> No<br>
   <br>
-  <label>Walked?</label>
-  <input type="checkbox" name="pet[walk]" id="pet.walk"><br>
+  <label>Walked?</label><br>
+  <input type="radio" name="walk" value="Yes"> Yes<br>
+  <input type="radio" name="walk" value="No"> No<br>
   <br>
-  <label>Dog Friendly?</label>
-  <input type="checkbox" name="pet[dog_friendly]" id="pet.dog_friendly"><br>
+  <label>Dog Friendly?</label><br>
+  <input type="radio" name="dog_friendly" value="Yes"> Yes<br>
+  <input type="radio" name="dog_friendly" value="No"> No<br>
   <br>
   <label>Vet Information:</label><br>
-  <input type="text" name="pet[vet]" id="pet.vet"><br>
+  <input type="text" name="vet" id="@pet.vet"><br>
   <br>
   <label>Additional Notes (allergies, medications, favorite treat/toy, etc.):</label><br>
-  <input type="text" name="pet[add_notes]" id="pet.add_notes"><br>
+  <input type="text" name="pet[add_notes]" id="@pet.add_notes"><br>
   <br>
   <input type="submit" value="Add Pet">
 </form>
-<h4><a href="/logout">Log Out</a></h4>

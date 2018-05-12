@@ -5,10 +5,10 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :gender
       t.date :birthday
-      t.boolean :fed
-      t.boolean :walk
-      t.boolean :dog_friendly
-      t.string :vet
+      t.string :fed
+      t.string :walk
+      t.string :dog_friendly
+      t.text :vet
       t.text :add_notes
       t.integer :user_id
     end

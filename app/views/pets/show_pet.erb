@@ -1,22 +1,29 @@
 <% if logged_in? %>
-  <% @pets.each do |pet| %>
-    <div>
-      <br><%= pet.name %></br>
-      <br><%= pet.gender %></br>
-      <br><%= pet.birthday %></br>
-      <br><%= pet.fed %></br>
-      <br><%= pet.walk %></br>
-      <br><%= pet.dog_friendly %></br>
-      <br><%= pet.vet %></br>
-      <br><%= pet.add_notes %></br>
-    </div>
-  <% end %>
+  <h3>Pet Information:</h3>
+  <label>Name:</label> <%= @pet.name %><br>
+  <br>
+  <label>Gender:</label> <%= @pet.gender %><br>
+  <br>
+  <label>Birthday:</label> <%= @pet.birthday %><br>
+  <br>
+  <label>Fed?</label> <%= @pet.fed %><br>
+  <br>
+  <label>Walked?</label> <%= @pet.walk %><br>
+  <br>
+  <label>Dog Friendly?</label> <%= @pet.dog_friendly %><br>
+  <br>
+  <label>Vet Information:</label>
+  <br><%= @pet.vet %><br>
+  <br>
+  <label>Additional Notes (allergies, medications, favorite treat/toy, etc.):</label><br>
+  <%= @pet.add_notes %><br>
+  <br>
+  <a href="/pets/<%= @pet.id %>/edit">| Edit Pet |</a><br>
+  <br>
   <form method="post" action="/pets/<%= @pet.id %>/delete">
     <input id="hidden" type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Pet">
   </form>
-  <a href="/pets/<%= @pet.id %>/edit">Edit Pet</a>
-  <h4><a href="/logout">Log Out</a></h4>
 <% else %>
-  <a href="/login">Log In</a>
+  <a href="/login">| Log In |</a>
 <% end %>

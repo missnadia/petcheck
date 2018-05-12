@@ -1,12 +1,10 @@
 <% if logged_in? %>
-  <h3>Welcome, <%=current_user.username %></h3>
+  <h3>Welcome, <%= current_user.username %></h3>
   <% @pets.each do |pet| %>
-  <div>
-    <br><a href="/pets/<%= pet.id %>"><%= pet.name %></a></br>
-  </div>
+    <div>
+      <br><a href="/pets/<%= pet.id %>"><%= pet.name %></a></br>
+    </div>
   <% end %>
-  <br><a href="/pets/new"> Add New Pet </a></br>
-  <h4><a href="/logout">Log Out</a></h4>
 <% else %>
-  <h4><a href="/login">Log In</a></h4>
+  <h4><a href="/login">| Log In |</a></h4>
 <% end %>

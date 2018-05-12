@@ -1,20 +1,46 @@
 <% if logged_in? %>
-  <% @pets.each do |pet| %>
-    <form method="post" action="/pets/<%= @pet.id %>">
-      <input id="hidden" type="hidden" name="_method" value="patch">
-      <input type="text" name="name" id="<%= @pet.name %>"><br>
-      <input type="radio" name="gender" value="male"> Male<br>
-      <input type="radio" name="gender" value="female"> Female<br>
-      <input type="date" name="birthday" id="<%= @pet.birthday %>"><br>
-      <input type="checkbox" name="fed" id="<%= @pet.fed %>"><br>
-      <input type="checkbox" name="walk" id="<%= @pet.walk %>"><br>
-      <input type="checkbox" name="dog_friendly" id="<%= @pet.dog_friendly %>"><br>
-      <input type="text" name="vet" id="<%= @pet.vet %>"><br>
-      <input type="text" name="add_notes" id="<%= @pet.add_notes %>"><br>
-      <input type="submit" value="Submit Changes">
-    </form>
-  <% end %>
-  <h4><a href="/logout">Log Out</a></h4>
+  <h2>Edit Pet Information</h2>
+
+  <form method="post" action="/pets/<%= @pet.id %>">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <label>Name:</label>
+    <%= @pet.name %><br>
+    <input type="text" name="name" id="<%= @pet.name %>"><br>
+    <br>
+    <label>Gender:</label>
+    <%= @pet.gender %><br>
+    <input type="radio" name="gender" value="Male"> Male<br>
+    <input type="radio" name="gender" value="Female"> Female<br>
+    <br>
+    <label>Birthday:</label>
+    <%= @pet.birthday %><br>
+    <input type="date" name="birthday" id="<%= @pet.birthday %>"><br>
+    <br>
+    <label>Fed?</label>
+    <%= @pet.fed %><br>
+    <input type="radio" name="fed" value="Yes"> Yes<br>
+    <input type="radio" name="fed" value="No"> No<br>
+    <br>
+    <label>Walked?</label>
+    <%= @pet.walk %><br>
+    <input type="radio" name="walk" value="Yes"> Yes<br>
+    <input type="radio" name="walk" value="No"> No<br>
+    <br>
+    <label>Dog Friendly?</label>
+    <%= @pet.dog_friendly %><br>
+    <input type="radio" name="dog_friendly" value="Yes"> Yes<br>
+    <input type="radio" name="dog_friendly" value="No"> No<br>
+    <br>
+    <label>Vet Information:</label><br>
+    <%= @pet.vet %><br>
+    <input type="text" name="vet" id="<%= @pet.vet %>"><br>
+    <br>
+    <label>Additional Notes (allergies, medications, favorite treat/toy, etc.):</label><br>
+    <%= @pet.add_notes %><br>
+    <input type="text" name="add_notes" id="<%= @pet.add_notes %>"><br>
+    <br>
+    <input type="submit" value="Submit Changes">
+  </form>
 <% else %>
-  <a href="/login">Log In</a>
+  <a href="/login">| Log In |</a>
 <% end %>
