@@ -1,8 +1,8 @@
 <% if logged_in? %>
   <h3>Welcome, <%= current_user.username %></h3>
-  <h4>Your Pets</h4>
+  <h3>My Pets</h3>
   <% @pets.each do |pet| %>
-    <br><a href="/pets/<%= pet.id %>"><%= pet.name %></a></br>
+    <a href="/pets/<%= pet.id %>"><%= pet.name %></a><br><br>
   <% end %>
 <% else %>
   <h4><a href="/login">| Log In |</a></h4>
