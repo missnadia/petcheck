@@ -20,6 +20,7 @@
   <br>
   <a href="/pets/<%= @pet.id %>/edit">| Edit Pet |</a><br>
   <br>
+
   <form method="post" action="/pets/<%= @pet.id %>/delete">
     <input id="hidden" type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Pet">
